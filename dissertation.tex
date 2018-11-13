@@ -49,6 +49,9 @@
 
 \usepackage{graphicx}
 % Insert additional usepackage commands here
+\usepackage[hyphens]{url} % <===========================================
+\usepackage[hidelinks]{hyperref} % Allows clickable reference lists
+\usepackage[none]{hyphenat} %Stops breaking up words in table
 
 \begin{document}
 %
@@ -58,11 +61,12 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Your title here}
+\title{ How Will the Introduction of a Mixed-Initiative Component that Predict User Requirements Affect the Size and Speed of the Levels Created?}
 %
 %
 % author name
-\author{Your name here}
+
+\author{Tristan Barlow-Griffin}
 
 % The paper headers -- please do not change these, but uncomment one of them as appropriate
 % Uncomment this one for COMP320
@@ -79,34 +83,63 @@
 The abstract goes here.
 \end{abstract}
 
+
+
+
+\markboth{COMP320: Research Review and Proposal}{COMP320: Research Review and Proposal}
+
 \section{Introduction}
-% The very first letter is a 2 line initial drop letter followed
-% by the rest of the first word in caps.
-% 
-% form to use if the first word consists of a single letter:
-% \IEEEPARstart{A}{demo} file is ....
-% 
-% form to use if you need the single drop letter followed by
-% normal text (unknown if ever used by the IEEE):
-% \IEEEPARstart{A}{}demo file is ....
-% 
-% Some journals put the first two words in caps:
-% \IEEEPARstart{T}{his demo} file is ....
-% 
-% Here we have the typical use of a "T" for an initial drop letter
-% and "HIS" in caps to complete the first word.
-\IEEEPARstart{T}{his} demo file is intended to serve as a ``starter file''
-for your final year project dissertation.
-Use this template for your literature review and proposal in COMP320,
-which you will then expand into your dissertation in COMP360.
+\IEEEPARstart{T}{his} research project will look whether a prototyping tool that predict user requirements will increase the size and speed of levels designed. A prototype is the initial design of an object \cite{prototype}. The prototyping phase of a project is used to quickly test certain aspect of a products' design so the designer can identify and clear up any problems\cite{budde1992prototyping}. In \cite[p.~150]{fullerton2004game} the author claims there are two kinds of prototyping in games: Physical and Software prototypes. Since book was published back in 2004, the accessibility of software tool to help prototyping has increased. The author of \cite[p.~164]{fullerton2004game} also describes level editors as a good way to prototype levels. \textit{Unreal Engine 4} (UE4) implement their own version of a level editor. Within this editor the designers can create basic geometry scaling them to fit their needs as well as addition custom meshes and programmable objects.
 
-Insert more sections here.
-Use BibTeX~\cite{bibtex} to cite relevant literature.
+This paper looks to build upon  a normal level editor by adding a Mixed-Initiative component that will predict the users requirements. The component will aim to reduce the time it takes to produce a level prototype. As discussed above the prototyping phase is meant to test a design, the less time and resources required to produce an artefact that can demonstrate the proposed design the better. Beyond the benefit of saving time, the less time a designer puts into a particular design the less attached to the design they become. When collaborating in a group, differing opinions can cause different constraints to be set on the design of a level. While a given design may satisfy the original designers set constraints, the prototype may have to be discarded as it did not meet the other requirements set by the team. Identifying and discarding concepts early in development can save a lot of time and energy \cite[p.489]{stempfle1999thinking} and arguable may reduce the negative impacts to interpersonal relations that idea dismissal may have. 
 
-\section{Conclusion}
-The conclusion goes here.
+\section{Related Work}
+The focus on this paper is how the  mixed-initiative tool will interact with the user. The aim is to discover if the tool will supplement the designer in such a way that they will increase the their normal output of levels. As a result the main focus of this literature review will be on prediction methods. For the research into prediction methods the scope went beyond just game design as their were limited cases of prediction methods to be found. The definition of mixed-initiative used in this paper will also be outlined with the category of mixed-initiative tool to be used defined as by \cite{liapis2016mixed} definition. This literature review will also look at mixed-initiative editors already published using their results to refine the design of interface.
 
-% references section
+The term mixed-initiative was first introduced by Jaime R \cite{carbonell1970mixed}.
+It describes a process where by a computer and a human designer work together to achieve a goal. The first instance of mixed-initiative was a tool to help students learn the English language. 
+
+Mixed initiative tools can be grouped into two broad categories: Interactive evolution and Computer-aided design \cite{liapis2016mixed}. 
+\begin{itemize}
+    \item Interactive evolution is where the designer has the idea and the computer helps them realise it. The computers role is to evaluate the humans design, presenting alternative solutions if any constraints are broken. 
+    
+    \item Computer-aided design is where the computer generates the content, but does not evaluate the quality of the produced work. Instead, a human designer will evaluate the work and use the evaluations to move towards a more desirable product space.
+\end{itemize}
+
+The authors of \cite{liapis2013sentient} have created a design tool that allows users to create levels using a low resolution graphical interface. The same tool can also propose alternative designs based on the maps made by the designer. In their paragraph that outlines computer-aided design they say that CAD "speeds up the development process" yet no mention of how their tool performs in this field when tested.
+
+The researchers of \cite{chipalkatty2013less} tested alternate methods for predicting human input so as to abstract the low-level movements of the robots the humans were controlling. They built on the idea that humans are good for high-level abstract tasks, but an AI agent was much better at performing low-level repetitive control tasks. They also found that when trying to predict the input the human would do next, trying to identify patterns in a history of inputs was far less successful at predicting the humans intention than just using the last input given by the human. Instead of using current human inputs, \cite{bhatia2016targeted} used the history of the humans social media page to predict the users interests. Perhaps if the authors of \cite{chipalkatty2013less} had looked less at the input history of the human and instead focused on grouping inputs together to create larger actions. Similar,  to how modern day phones often predict entire sentences rather than just single words.
+
+Predictive texting increases the average message length users send to each other \cite{ling2005length} as well as the speed the words are written \cite{dunlop2000predictive}. The same theory may apply to game design. If patterns to a users game design are established. an AI system may be able to assist in design. This tool may increase the size of the levels the designers may produce and reduce the production time. 
+
+\section{Proposal}
+The experiment proposed in this studies involves...
+
+\section{References}
+\subsection{Mixed-initiative interaction\cite{allen1999mixed}}
+Link : See slack ED
+
+\subsection{Fostering creativity in the mixed-initiative evolutionary dungeon designer\cite{alvarez2018fostering}}
+\href{https://muep.mau.se/bitstream/handle/2043/25889/Nolasco_O%CC%88sterman.pdf?sequence=1&isAllowed=y}{Link}
+
+\subsection{Mixed-initiative procedural generation of dungeons using game design patterns\cite{baldwin2017mixed}}
+\href{https://muep.mau.se/bitstream/handle/2043/22832/baldwin-holmberg_mixed-initiative-procedural_FINAL.pdf?sequence=2&isAllowed=y}{Link}
+
+\subsection{Cellular automata for real-time generation of infinite cave levels\cite{johnson2010cellular}}
+\href{https://dl-acm-org.ezproxy.falmouth.ac.uk/citation.cfm?id=1814266}{Link}
+\subsection{Mixed-initiative  design  of game levels: Integrating mission and space into level generation.\cite{karavolos2015mixed}}
+\href{http://www.fdg2015.org/papers/fdg2015_paper_25.pdf}{Link}
+
+\subsection{Experience-driven procedural content generation\cite{yannakakis2011experience}}
+\href{https://ieeexplore-ieee-org.ezproxy.falmouth.ac.uk/document/5740836}{Link}
+\subsection{Evaluating collaborative filtering recommender systems\cite{herlocker2004evaluating}}
+\href{https://dl-acm-org.ezproxy.falmouth.ac.uk/ft_gateway.cfm?id=963772&ftid=247769&dwn=1&CFID=19451816&CFTOKEN=60d77465fa35c5bb-88408FAD-D71F-E81D-FF436ADBE71D45CA}{Link}
+
+\subsection{Controlled Procedural Terrain Generation Using Software Agents\cite{doran2010controlled}}
+\href{https://ieeexplore-ieee-org.ezproxy.falmouth.ac.uk/document/5454273}{Link}
+
+\subsection{Applications of Intelligent Agents\cite{jennings1998applications}}
+\href{ftp://143.106.148.79/pub/docs/gudwin/ia009/jennings98applications.pdf}{Link}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
