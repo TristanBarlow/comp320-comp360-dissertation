@@ -120,6 +120,10 @@ Prototyping a level should be a fast iterative process \cite{smith2011tanagra}, 
 
 Within an IE environment, the core of the creative process relies on the human designer. As the main creative driver, the human has the most input. Ideally, the computer will add value by providing supplementary support. It can be argued as the constraints are determined more by the human the size of the possible output space will be larger. Yanakakis \textit{et al} \cite{yannakakis2014mixed} claim that CAD examples like PCG limit the designers' intentions as they follow their own algorithms. Doran \textit{et al}\cite{doran2010controlled} inadvertently corroborate Yanakaki\textit{et al}\cite{yannakakis2014mixed} view, as they say, a PCG algorithm should ideally, have a set of designer-centric parameters as their only form of control. This limited control over the creation of levels may, in some situations, be enough. During the prototyping phase, when the requirements needed from a map are changing the fastest, the level of control provided through CAD would not be enough. 
 
+
+
+
+
 \section{Mixed-Initiative Level Designers } \label{UI}
 A user interface should be intuitive to use and not require any additional helping systems \cite{oppermann2002user}. Liapis \textit{et al} \cite{liapis2013sentient} aim to achieve this by creating a design tool that allows users to create levels using a low-resolution graphical interface. Figure~\ref{Sketchbook} shows the interface used to design levels for a strategy game. The designer can place tiles on the map which will colour in the given tile with the placed tiles colour. During a tile placement, the tool will test for the playability of the map, checking to see if placing the current tile will break any of the games' constraints.  The Sentient sketchbook also provides alternative viewing modes, examples of these alternate viewing models can be seen in Figure~\ref{Sketchbook2}.  There is no mention in the study how often these tools were used, Galtiz \cite[p.~752]{galitz2007essential} warns against too many graphics on the screen.
 
@@ -163,7 +167,16 @@ The researchers of \cite{chipalkatty2013less} tested alternate methods for predi
 \subsection{Markov Chains}
 Markov Chains is a theory similar to the most successful method found by Bhatia\textit{et al} \cite{bhatia2016targeted}. A Markov chain is a special kind of process that works under the assumption that the state at time \textit{t+1} depends only on the current state. To put it another way, the state at time \textit{t+1} is exclusively dependent on the state at time \textit{t}. This means State \textit{t+1}  is not dependent on the history of the states leading up to it\cite{ye2000markov}. While this technique may be useful for predicting anomalies in systems \cite{ju2001hybrid, gwadera2005markov, ye2000markov} where the states are heavily dependent on the latter state happening. It is hard to see how during a creative process where the next state is dependent on the vision of the design state \textit{t+1} can be predicted just from knowing state \textit{t}. The introduction of a Markov model makes this method more viable. A Markov model can be used to describe the probabilistic relationship between the previous states in a Markov Chain\cite{markov1971extension}.  Higher order Markov chains relax the rule of the next state being only dependent on the current state by allowing the network structure to look \textit{n} number of states back from the current state\cite{ching2008higher}. Snodgrass \textit{et al}\cite{snodgrass2017learning}used Markov models as a way to model level data  .Using these Markov models Snodgrass \textit{et al}\cite{snodgrass2017learning} applied different sampling techniques, they found using their higher order Markov chains were more effective than using just Markov chains.  This conflicts with Chipalkatty \textit{et al}\cite{chipalkatty2013less} findings of "less is more", Snodgrass \textit{et al}\cite{snodgrass2017learning} found that using a history of states to predict the next state was more effective to achieve their goals.
 
-\subsection{N }
+\subsection{Artifical Neural Network}
+An artificial neural network (ANN) consists of many nodes that are divided into separate layers. Each node receives inputs from other nodes, the value of these inputs depends on the weight of the connection between the nodes \cite{lai2010prediction}. ANN are used in prediction methods focusing on outputting numerical values \cite{lai2010prediction, akdag2009estimation}. Shepperd \textit{et al} \cite{shepperd2001comparing} found that case-based reasoning(CBR) outperformed a ANN on more occasions. However, Shepperd \textit{et al}\cite{shepperd2001comparing} highlighted the dependence of the respective techniques on the nature of the training sets used. Figure~\ref{learningSets} shows a stepwise regression procedure proving to be more accurate at prediction than both CBR and ANN on small datasets.  A time series approach to neural networks has been found to increase their accuracy when dealing with world state predictions \cite{hazarika1998neural}. Although the training set Hazarika \textit{et al} used was the large number at 500 data points for training and 250 points for validation. Looking at examples from \cite{liapis2013sentient, alvarez2018fostering,  baldwin2017mixed} the maximum levels sizes are 12 wide by 12 tall. This means that the maximum number of data points provided by one map would be 124, which is far less than Hazarika \textit{et al} use to train their ANN.
+
+\begin{figure}[h]
+	\includegraphics[width=1.0\linewidth]{trainingSets.PNG}
+	\caption{Shepperd \textit{et al}  Analysis of Accuracy (MMRE) for Continuous Model (Y1)  ~\cite{shepperd2001comparing}.}
+	\label{learningSets}
+\end{figure} 
+
+
 N GRAM 
 
 Wave Function collapse
@@ -176,10 +189,16 @@ Francois pachet continuator
 
 
 \section{Methodology}
-The research question proposed in this project is: How Will a Mixed-Initiative Level Designer that Predict User Requirements Affect the Size and Speed of the Levels Created?  A discussion of the hypothesis drawn from this question can be view in Section ~\ref{hyp}
+One of the key motivators for this experiment comes from Alverezs' \textit{et al}\cite{alvarez2018fostering} literature, in particular a users' feature request for more automated assistance to reduce clicking. To this end, this project proposes a tool that will reduce clicks by predicting what the users next action will be. The research question proposed in this project is: How Will a Mixed-Initiative Level Designer that Predict User Requirements Affect the Size and Speed of the Levels Created? The hypothesis tested in this project are listed in tabel  A discussion of the hypothesis drawn from this question can be view in Section ~\ref{hyp}
 
-\subsection{Creating levels}
-The experiment proposed in this paper need at least two dependent variables. Firstly the speed of which a level was created. To measure this, the participants will be restricted in the size of the level they are allowed to create see Table ~\ref{settings} settings 3 and settings 4. Before this first part of the experiment the users will be explained the rules. There will be a minimum number of tiles required before a level is deemed "complete". The designer must place at least one start, one end and one other kind of tile. At least three props will be placed anywhere inside any of the placed rooms. After doing this the level complete button will be available.  The size of the grid presented to the user will be \textit{24 x 24}.
+\subsection{Participants}
+The participants for this experiment will be randomly sampled from Falmouth University Games Academy. As such, most participants will have some game design experience experience. In this experiment all of the participants will be in one group, they will each be required to design levels using the level editor provided. By the end of the experiment, all of the participants will have designed the same number of levels. Everyone in this study will be given a consent form, an information sheet and the option to quit the experiment at any time. The information sheet will only give the basic information of the project as we do not want to invite acquiescence bias\cite{watson1992correcting}. The data collected in this experiment will not be enough to identify anyone, keeping the participants anonymity safe.
+
+\subsection{Design Session}
+The design session will require the participants to create five different levels under five sets of constraints. Before the session starts the users are prompted with a multiple choice question that will enquire to the number of years of game design experience they have. The user will then be taken to the main level designer screen, they will have up to one minute to familiarise themselves with the interface.
+
+
+Firstly the speed of which a level was created. To measure this, the participants will be restricted in the size of the level they are allowed to create see Table ~\ref{settings} settings 3 and settings 4. Before this first part of the experiment the users will be explained the rules. There will be a minimum number of tiles required before a level is deemed "complete". The designer must place at least one start, one end and one other kind of tile. At least three props will be placed anywhere inside any of the placed rooms. After doing this the level complete button will be available.  The size of the grid presented to the user will be \textit{24 x 24}.
 
 \begin{table}[h]
 	\centering
@@ -188,18 +207,48 @@ The experiment proposed in this paper need at least two dependent variables. Fir
 	\def\arraystretch{2}
 \resizebox{\columnwidth}{!}{\begin{tabular}{|l|l|l|l|l|}
 		\hline
-		\textbf{Editor Settings} & \textbf{Predictive Placements Enables}& \textbf{Infinite Level Enabled} \\\hline
-		Settings 1  &  X & X \\ \hline
-		Settings 2  &     & X \\ \hline
-		Settings 3  &   X&  \\ \hline
-		Settings 4  &    &  \\ \hline
+		\textbf{Editor Settings} & \textbf{Predictive Placements Enables}& \textbf{Infinite Level Enabled} & \textbf{Exploration}\\\hline
+		Settings 1  &  X & X& \\ \hline
+		Settings 2  &     & X &\\ \hline
+		Settings 3  &   X&  &\\ \hline
+		Settings 4  &    &  &\\ \hline
+		Settings 5  & X &   & X\\ \hline
 	\end{tabular}}
 \end{table}
 
+\begin{table*}[h]
+		\centering
+		\caption{Hypothesis Table}
+		\label{hyp}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|l|l|l|l|l|}
+			\hline
+			& \textbf{Hypothesis}& \textbf{Null Hypothesis} & \textbf{Data Source}\\\hline
+			1 & The mixed-initiative tool will effect the speed at which the participants create levels.
+			& The mixed-initiative tool will not effect the speed at which the participants create levels.
+			& Design Session\\ \hline
+			
+			2 & The mixed-initiative tool will effect the size of the levels the participants create.
+			&  The mixed-initiative tool will not effect the size of the levels the participants create.
+			& Design Session\\ \hline
+
+			3 & The mixed-initiative tool will influence participants to explore other level designs.
+			& The mixed-initiative tool wil not influence participants to explore other level designs.
+			&  Questionaire\\ \hline
+			
+		          4 & The mixed-initiative tool will effect the more experienced participants more.
+			&   The mixed-initiative tool will have the same effect on all participants.
+			& Design Session\\ \hline
+		\end{tabular}
+\end{table*}
 
 
 \subsection{Hypothesis}\label{hyp}
 When creating a level designer the aim is to always increase the ease at which levels could normally be created. For the scope of this paper, we will look not look at how the editor created performs, but how the mixed-initiative tool performs. 
+
+
+
+\section{s}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
