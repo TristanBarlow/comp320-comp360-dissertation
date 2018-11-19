@@ -64,7 +64,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{ How Will a Mixed-Initiative Level Designer that Predict User Requirements Affect the Size and Speed of the Levels Created?}
+\title{ How Will a Mixed-Initiative Level Designer that Predicts User Requirements Affect the Levels Created?}
 %
 %
 % author name
@@ -121,9 +121,6 @@ Prototyping a level should be a fast iterative process \cite{smith2011tanagra}, 
 Within an IE environment, the core of the creative process relies on the human designer. As the main creative driver, the human has the most input. Ideally, the computer will add value by providing supplementary support. It can be argued as the constraints are determined more by the human the size of the possible output space will be larger. Yanakakis \textit{et al} \cite{yannakakis2014mixed} claim that CAD examples like PCG limit the designers' intentions as they follow their own algorithms. Doran \textit{et al}\cite{doran2010controlled} inadvertently corroborate Yanakaki\textit{et al}\cite{yannakakis2014mixed} view, as they say, a PCG algorithm should ideally, have a set of designer-centric parameters as their only form of control. This limited control over the creation of levels may, in some situations, be enough. During the prototyping phase, when the requirements needed from a map are changing the fastest, the level of control provided through CAD would not be enough. 
 
 
-
-
-
 \section{Mixed-Initiative Level Designers } \label{UI}
 A user interface should be intuitive to use and not require any additional helping systems \cite{oppermann2002user}. Liapis \textit{et al} \cite{liapis2013sentient} aim to achieve this by creating a design tool that allows users to create levels using a low-resolution graphical interface. Figure~\ref{Sketchbook} shows the interface used to design levels for a strategy game. The designer can place tiles on the map which will colour in the given tile with the placed tiles colour. During a tile placement, the tool will test for the playability of the map, checking to see if placing the current tile will break any of the games' constraints.  The Sentient sketchbook also provides alternative viewing modes, examples of these alternate viewing models can be seen in Figure~\ref{Sketchbook2}.  There is no mention in the study how often these tools were used, Galtiz \cite[p.~752]{galitz2007essential} warns against too many graphics on the screen.
 
@@ -176,29 +173,59 @@ An artificial neural network (ANN) consists of many nodes that are divided into 
 	\label{learningSets}
 \end{figure} 
 
-
-N GRAM 
-
-Wave Function collapse
-
-Learning to Generate Video Game Maps Using Markov Models
-
-https://github.com/mxgmn/WaveFunctionCollapse
-
-Francois pachet continuator 
-
+\subsection{Stepwise Regression Procedure}
 
 \section{Methodology}
-One of the key motivators for this experiment comes from Alverezs' \textit{et al}\cite{alvarez2018fostering} literature, in particular a users' feature request for more automated assistance to reduce clicking. To this end, this project proposes a tool that will reduce clicks by predicting what the users next action will be. The research question proposed in this project is: How Will a Mixed-Initiative Level Designer that Predict User Requirements Affect the Size and Speed of the Levels Created? The hypothesis tested in this project are listed in tabel  A discussion of the hypothesis drawn from this question can be view in Section ~\ref{hyp}
+One of the key motivators for this experiment comes from Alverezs' \textit{et al}\cite{alvarez2018fostering} literature, in particular a users' feature request for more automated assistance to reduce clicking. To this end, this project proposes a tile based level editor which has a mixed-initiative component. The mixed-initiative component will reduce clicks by predicting what the users next action will be. In addition, this level design tool will be used to discover if the predictive texting findings of Ling \cite{ling2005length}  and Dunlop \textit{et al}\cite{dunlop2000predictive} are applicable to level design. The research question proposed in this project is: How Will a Mixed-Initiative Level Designer that Predicts User Requirements Affect the Levels Created? 
+
+\subsection{Hypothesis}\label{hypothesis}
+When creating a level designer the aim is to always increase the ease at which levels could normally be created. For the scope of this paper, the hypothesises will focus on MI tool within the context of the editor, not the editor itself. Table ~\ref{hyp} shows the hypothesises researched in this paper, it also shows from which source of data each hypothesis depends. Hypothesises 2 and 1 will be addressing  Ling \cite{ling2005length}  and Dunlop \textit{et al}\cite{dunlop2000predictive} predictive texting results and whether they will also prove true in a level editor. Hypothesis 3 will be investigating whether a predictive tool will satisfy the feature proposed by  Alverezs' \textit{et al}\cite{alvarez2018fostering}. Hypothesis 4 will build on the work of  Alvarez' \textit{et al}\cite{alvarez2018fostering} and see if an MI level designer can make designers consider alternative level design approaches. Finally, hypothesis 5 will discover if designers with more experience are more likely to find the MI a negative influence than designers with less experience.
+
+\begin{table*}[h]
+		\centering
+		\caption{Hypothesis Table}
+		\label{hyp}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|c|p{7cm}|p{7cm}|p{1.75cm}|}
+			\hline
+			& \textbf{Hypothesis}& \textbf{Null Hypothesis} & \textbf{Data Source}\\\hline
+			1 & The MI tool will effect the speed at which the participants create levels.
+			& The MI tool will not effect the speed at which the participants create levels.
+			& Design Session Statistics\\ \hline
+			
+			2 & The MI tool will effect the size of the levels the participants create.
+			&  The MI tool will not effect the size of the levels the participants create.
+			& Design Session Statistics\\ \hline
+
+			3 & The MI tool will effect the number of the clicks the designer makes.
+			&  The MI tool will not effect the number of the clicks the designer makes.
+			& Design Session Statistics\\ \hline
+
+			4 & The MI tool will influence participants to explore other level designs.
+			& The MI tool wil not influence participants to explore other level designs.
+			&  Questionnaire\\ \hline
+
+		          5 & The participants with more experience will be Negatively impacted more often by the MI tool.
+			&  There will be no correlation between experience and the negative impact of the MI tool.
+			& Questionnaire\\ \hline
+			
+		\end{tabular}
+\end{table*}
 
 \subsection{Participants}
-The participants for this experiment will be randomly sampled from Falmouth University Games Academy. As such, most participants will have some game design experience experience. In this experiment all of the participants will be in one group, they will each be required to design levels using the level editor provided. By the end of the experiment, all of the participants will have designed the same number of levels. Everyone in this study will be given a consent form, an information sheet and the option to quit the experiment at any time. The information sheet will only give the basic information of the project as we do not want to invite acquiescence bias\cite{watson1992correcting}. The data collected in this experiment will not be enough to identify anyone, keeping the participants anonymity safe.
+The participants for this experiment will be randomly sampled from Falmouth University Games Academy. As such, most participants will have some game design experience experience. A power analysis for this experiment resulted in a sample sixe of 23.  In this experiment all of the participants will be in one group, they will each be required to design levels using the level editor provided. By the end of the experiment, all of the participants will have designed the same number of levels. Everyone in this study will be given a consent form, an information sheet and the option to quit the experiment at any time. The information sheet will only give the basic information of the project as we do not want to invite acquiescence bias\cite{watson1992correcting}. The data collected in this experiment will not be enough to identify anyone, keeping the participants anonymity safe.
 
 \subsection{Design Session}
-The design session will require the participants to create five different levels under five sets of constraints. Before the session starts the users are prompted with a multiple choice question that will enquire to the number of years of game design experience they have. The user will then be taken to the main level designer screen, they will have up to one minute to familiarise themselves with the interface.
+The design session will require the participants to create five different levels each with different editor settings. Before the session starts the users are prompted with a multiple choice question. This question will enquire into the participants' game design experience, measured in years. The user will be presented with the main level designer interface. They will have up to one minute to familiarise themselves with the interface before the experiments start. The different editor settings the participants will be working in can be seen in Table~\ref{settings}. The order in which the different settings will occur will be random, this will reduce the impact of the practice effect on any data gathered. The computer will choose the order in which the editor setting will be applied. This means the observing researcher will not know what current settings are applied.  Making this a double-blind study which will stop investigator/observer bias \cite{phillips1999double}. Before each level starts an on-screen prompt will inform the user of the rules of the current level, for example: "This level has a max size of 24 x 24 tiles.". After completion of each level, the designer will be asked four multiple choice questions.  Each question will have five possible answers, the answers are relative to the questions asked. After the questions have been answered the answers, the map settings, the time is taken and a layout of the map will all be saved.
+ The questions are:
+\begin{itemize}
+    \item How frequently did the level designer make you consider an alternative level design?
+    
+    \item How much impact did the level designer have on your work flow?
 
-
-Firstly the speed of which a level was created. To measure this, the participants will be restricted in the size of the level they are allowed to create see Table ~\ref{settings} settings 3 and settings 4. Before this first part of the experiment the users will be explained the rules. There will be a minimum number of tiles required before a level is deemed "complete". The designer must place at least one start, one end and one other kind of tile. At least three props will be placed anywhere inside any of the placed rooms. After doing this the level complete button will be available.  The size of the grid presented to the user will be \textit{24 x 24}.
+    \item What kind of impact did the level designer have on your work flow?
+\end{itemize}
+An alternate method would be to have a questionnaire at the end of the experiment once all levels have been completed. However, as each set of responses correlates to a level for data management having being directly associated with the level is easier. In addition, leaving the questions until the end in one questionnaire may invite levelling and sharpening bias, this is where details are lost and other are heightened over time \cite{koriat2000toward}.
 
 \begin{table}[h]
 	\centering
@@ -207,7 +234,7 @@ Firstly the speed of which a level was created. To measure this, the participant
 	\def\arraystretch{2}
 \resizebox{\columnwidth}{!}{\begin{tabular}{|l|l|l|l|l|}
 		\hline
-		\textbf{Editor Settings} & \textbf{Predictive Placements Enables}& \textbf{Infinite Level Enabled} & \textbf{Exploration}\\\hline
+		\textbf{Editor Settings} & \textbf{Predictive Placements Enables}& \textbf{Unrestricted size } & \textbf{Exploration}\\\hline
 		Settings 1  &  X & X& \\ \hline
 		Settings 2  &     & X &\\ \hline
 		Settings 3  &   X&  &\\ \hline
@@ -215,40 +242,6 @@ Firstly the speed of which a level was created. To measure this, the participant
 		Settings 5  & X &   & X\\ \hline
 	\end{tabular}}
 \end{table}
-
-\begin{table*}[h]
-		\centering
-		\caption{Hypothesis Table}
-		\label{hyp}
-		\def\arraystretch{1.5}
-		\begin{tabular}{|l|l|l|l|l|}
-			\hline
-			& \textbf{Hypothesis}& \textbf{Null Hypothesis} & \textbf{Data Source}\\\hline
-			1 & The mixed-initiative tool will effect the speed at which the participants create levels.
-			& The mixed-initiative tool will not effect the speed at which the participants create levels.
-			& Design Session\\ \hline
-			
-			2 & The mixed-initiative tool will effect the size of the levels the participants create.
-			&  The mixed-initiative tool will not effect the size of the levels the participants create.
-			& Design Session\\ \hline
-
-			3 & The mixed-initiative tool will influence participants to explore other level designs.
-			& The mixed-initiative tool wil not influence participants to explore other level designs.
-			&  Questionaire\\ \hline
-			
-		          4 & The mixed-initiative tool will effect the more experienced participants more.
-			&   The mixed-initiative tool will have the same effect on all participants.
-			& Design Session\\ \hline
-		\end{tabular}
-\end{table*}
-
-
-\subsection{Hypothesis}\label{hyp}
-When creating a level designer the aim is to always increase the ease at which levels could normally be created. For the scope of this paper, we will look not look at how the editor created performs, but how the mixed-initiative tool performs. 
-
-
-
-\section{s}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
