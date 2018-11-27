@@ -54,6 +54,8 @@
 \usepackage[none]{hyphenat} %Stops breaking up words in table
 \usepackage{cite}
 \usepackage{listings}
+\usepackage{amssymb}
+
 \usepackage[table,pdftex,dvipsnames]{xcolor} 
 
 \begin{document}
@@ -64,7 +66,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{ How Will a Mixed-Initiative Level Designer that Predicts User Requirements Affect the Levels Created?}
+\title{ How Will a Mixed-Initiative Level Editor that Predicts User Requirements Affect the Levels Created?}
 %
 %
 % author name
@@ -83,7 +85,7 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-This paper builds upon a feature request by users in Alvarez~\textit{et al}\cite{alvarez2018fostering} study into a mixed-initiative level design tool. 
+This paper builds upon a feature request by users in Alvarez~\textit{et al}\cite{alvarez2018fostering} study into a mixed-initiative level editor.
 \end{abstract}
 
 
@@ -92,12 +94,12 @@ This paper builds upon a feature request by users in Alvarez~\textit{et al}\cite
 \markboth{COMP320: Research Review and Proposal}{COMP320: Research Review and Proposal}
 
 \section{Introduction} \label{intro}
-\IEEEPARstart{T}{his} research project will look whether a prototyping tool that predicts user requirements will increase the size and speed of levels designed. A prototype is the initial design of an object \cite{prototype}. The prototyping phase of a project is used to quickly test a certain aspect of a products' design so the designer can identify and clear up any problems\cite{budde1992prototyping}.Fullerton \textit{et all} \cite[p.~150]{fullerton2004game} state there are two kinds of prototyping in games: Physical and Software prototypes. Since this book was published back in 2004, the accessibility of tools that helps designers prototype has increased. Fullerton \textit{et al} \cite[p.~164]{fullerton2004game} also describes a level editor as a good way to prototype levels.  The free game engine called \textit{Unreal Engine 4} (UE4) has a level editor built into it. Within this editor, the designers can create basic geometry scaling them to fit their needs. In addition, designers can add custom meshes and programmable objects.
+\IEEEPARstart{T}{his} research project will look into how a prototyping tool with a Mixed-Initiative (MI) component that predicts user requirements will affect the design process and design of a level. A prototype is the initial design of an object \cite{prototype}. The prototyping phase of a project is used to quickly test a certain aspect of a products' design so the designer can identify and clear up any problems\cite{budde1992prototyping}.Fullerton \textit{et all} \cite[p.~150]{fullerton2004game} state there are two kinds of prototyping in games: Physical and Software prototypes. Since this book was published back in 2004, the accessibility of tools that helps designers prototype has increased. Fullerton \textit{et al} \cite[p.~164]{fullerton2004game} also describes a level editor as a good way to prototype levels.  The free to download game engine called \textit{Unreal Engine 4} (UE4) has a level editor built into it. Within this editor, the designers can create basic geometry scaling them to fit their needs. In addition, designers can add custom meshes and programmable objects to turn their levels into games.
 
-This paper will build upon a normal level editor by adding a Mixed-Initiative(MI) component. This MI component will predict the users' requirements. The MI tool seeks to reduce the time taken to design a level. The prototyping phase will test the design of a product. The less time and resources required to produce an artefact that can demonstrate the proposed design the better. Beyond the benefit of saving time, the less time a designer puts into a particular design the less attached to the design they become. When collaborating in a group, differing opinions can cause different constraints to be set on the design of a product. While a given design may satisfy the original designers set constraints, the prototype may have to be discarded as it did not meet the other requirements set by the team. Identifying and discarding concepts early in development can save a lot of time and energy \cite[p.489]{stempfle1999thinking}. Arguably, this will reduce the negative impacts to interpersonal relations that idea dismissal may have. 
+This paper will build upon a basic the level editor by adding an MI component, this component aims to implement features requested from Alvarez \textit{et al}\cite{alvarez2018fostering} study on their MI level editor. The implementation of these features is meant to increase the overall ease of designing a level. In addition, we look at the Sentient Sketchpad\cite{liapis2013sentient} an existing MI level editor, comparing their design to MI tool design theory and general user interface design theory. Developing a level editor that is meant to only prototype a levels' design means there will be less focus on the polish of the level meaning corners can be cut to save time.  The prototyping phase is meant to test the design of a product, the less time and resources required to produce an artefact that can demonstrate the proposed design the better. Beyond the benefit of saving time, the less time a designer puts into a particular design the less attached to the design they become. When collaborating in a group, differing opinions can cause different constraints to be set on the design of a product. While a given design may satisfy the original designers set constraints, the prototype may have to be discarded as it did not meet the other requirements set by the team. Identifying and discarding concepts early in development can save a lot of time and energy \cite[p.489]{stempfle1999thinking}. Arguably, this will reduce the negative impacts to interpersonal relations that idea dismissal may have. 
 
 \section{Related Work}
-The main focus of this literature review will be on prediction methods. For the research into prediction methods, the scope went beyond just game design as there were limited cases of prediction methods to be found. The method of prediction must be accurate for the hypothesis to be tested accurately.  The range of complexity of prediction methods is large, for scoping reasons, this paper will focus on simple prediction methods. Most prediction methods have been the centre of studies with far more resources than this project as such.  The definition of mixed-initiative used in this paper will be defined in  Section~\ref{MI}.  In Section~\ref{MI} mixed-Initiative tools are group into two broad categories using Liapis~\textit{et al}\cite{liapis2016mixed} definition. Defining these groups makes it easier to distinguish between the most common type of mixed-initiative tool.  In Section~\ref{UI} there is an evaluation of the current state of mixed-initiative level designers being used.  This paper uses knowledge in this section to identify features that if implemented could help to speed up the prototyping phase. 
+The main focus of this literature review will be on prediction methods. For the research into prediction methods, the scope went beyond just game design as there were limited cases of prediction methods to be found. The method of prediction must be accurate for the hypotheses to be tested accurately.  The range of complexity of prediction methods is large, for scoping reasons, this paper will focus on simple prediction methods. Most prediction methods have been the centre of studies with far more resources than this project as such.  The definition of mixed-initiative used in this paper will be defined in  Section~\ref{MI}.  In Section~\ref{MI} mixed-Initiative tools are group into two broad categories using Liapis~\textit{et al}\cite{liapis2016mixed} definition. Defining these groups makes it easier to distinguish between the most common type of mixed-initiative tool.  In Section~\ref{UI} there is an evaluation of the current state of mixed-initiative level editors being used.  This paper uses knowledge in this section to identify features that if implemented could help to speed up the prototyping phase. 
 
 \section{Mixed-initiative} \label{MI}
 The term mixed-initiative was first introduced by Jaime R \cite{carbonell1970mixed}.
@@ -121,7 +123,7 @@ Prototyping a level should be a fast iterative process \cite{smith2011tanagra}, 
 Within an IE environment, the core of the creative process relies on the human designer. As the main creative driver, the human has the most input. Ideally, the computer will add value by providing supplementary support. It can be argued as the constraints are determined more by the human the size of the possible output space will be larger. Yanakakis \textit{et al} \cite{yannakakis2014mixed} claim that CAD examples like PCG limit the designers' intentions as they follow their own algorithms. Doran \textit{et al}\cite{doran2010controlled} inadvertently corroborate Yanakaki\textit{et al}\cite{yannakakis2014mixed} view, as they say, a PCG algorithm should ideally, have a set of designer-centric parameters as their only form of control. This limited control over the creation of levels may, in some situations, be enough. During the prototyping phase, when the requirements needed from a map are changing the fastest, the level of control provided through CAD would not be enough. 
 
 
-\section{Mixed-Initiative Level Designers } \label{UI}
+\section{Mixed-Initiative Level Editors } \label{UI}
 A user interface should be intuitive to use and not require any additional helping systems \cite{oppermann2002user}. Liapis \textit{et al} \cite{liapis2013sentient} aim to achieve this by creating a design tool that allows users to create levels using a low-resolution graphical interface. Figure~\ref{Sketchbook} shows the interface used to design levels for a strategy game. The designer can place tiles on the map which will colour in the given tile with the placed tiles colour. During a tile placement, the tool will test for the playability of the map, checking to see if placing the current tile will break any of the games' constraints.  The Sentient sketchbook also provides alternative viewing modes, examples of these alternate viewing models can be seen in Figure~\ref{Sketchbook2}.  There is no mention in the study how often these tools were used, Galtiz \cite[p.~752]{galitz2007essential} warns against too many graphics on the screen.
 
 \begin{figure}[h]
@@ -154,7 +156,7 @@ Horvitz \textit{et al} \cite{horvitz1999principles} propose 12 critical factors 
 
 Another factor raised by Horvitz \cite{horvitz1999principles} is that a tool must consider minimizing the costs of poor guesses about the users' goals. Even with an extensive history of the users' requirments, a novel use of the tool might be required. It is important for a system to recognise when something novel is happening and for it not to attempt predictions.  Some authors find value in these missed guesses and even seek to find novelty search spaces \cite{liapis2013sentient}. Other authors \cite{liapis2016can,alvarez2018fostering, yannakakis2014mixed} claim these kind of mistakes can foster creativity and alternate suggestions that do not aim to predict the user can be beneficial. On the right-hand side of Figure~\ref{Sketchbook} the results of the guessing algorithm are shown. Clicking retry will remove the current maps and create new ones for the designer to evaluate.
 
-None of the above examples \cite{alvarez2018fostering, liapis2013sentient, baldwin2017mixed} satisfy  Barnes \textit{et al}\cite{barnes2015designing} statement that a mixed-initiative systems UI must provide transparency to the reasoning behind the agents actions. In all cases above\cite{alvarez2018fostering, liapis2013sentient, baldwin2017mixed} , when generating new suggestions the reasoning behind each suggestion was not given to the designer. The designer is presented with the statstics of the current map generated(density, number of resources ETC) but it is not clear from the interface how these statistics are being used. When automating a system transparency is required for a human to trust the automation process \cite{lee2004trust}.
+None of the above examples \cite{alvarez2018fostering, liapis2013sentient, baldwin2017mixed} satisfy Barnes \textit{et al}\cite{barnes2015designing} statement that a mixed-initiative systems UI must provide transparency to the reasoning behind the agents actions. In all cases above\cite{alvarez2018fostering, liapis2013sentient, baldwin2017mixed} , when generating new suggestions the reasoning behind each suggestion was not given to the designer. The designer is presented with the statstics of the current map generated(density, number of resources ETC) but it is not clear from the interface how these statistics are being used. When automating a system transparency is required for a human to trust the automation process \cite{lee2004trust}.
 
 \section{Prediction Methods} \label{prediction}
 Predictive texting increases the average message length users send to each other \cite{ling2005length} as well as the speed the words are written \cite{dunlop2000predictive}. The same theory may apply to game design. If patterns to a users game design are established, an AI system may be able to assist in design. In this section, this paper will look into different methods of predicting human requirements, this paper will also discuss the pros and cons of each technique.
@@ -176,56 +178,64 @@ An artificial neural network (ANN) consists of many nodes that are divided into 
 \subsection{Stepwise Regression Procedure}
 
 \section{Methodology}
-One of the key motivators for this experiment comes from Alverezs' \textit{et al}\cite{alvarez2018fostering} literature, in particular a users' feature request for more automated assistance to reduce clicking. To this end, this project proposes a tile based level editor which has a mixed-initiative component. The mixed-initiative component will reduce clicks by predicting what the users next action will be. In addition, this level design tool will be used to discover if the predictive texting findings of Ling \cite{ling2005length}  and Dunlop \textit{et al}\cite{dunlop2000predictive} are applicable to level design. The research question proposed in this project is: How Will a Mixed-Initiative Level Designer that Predicts User Requirements Affect the Levels Created? 
+One of the key motivators for this experiment comes from Alverezs' \textit{et al}\cite{alvarez2018fostering} literature, in particular a users' feature request for more automated assistance to reduce clicking. To this end, this project proposes a tile based level editor which has a mixed-initiative component. The mixed-initiative component will reduce clicks by predicting what the users next action will be. In addition, this MI component will be used to discover if the predictive texting findings of Ling \cite{ling2005length}  and Dunlop \textit{et al}\cite{dunlop2000predictive} are applicable to level design. The research question proposed in this project is: How Will a Mixed-Initiative Level Editor that Predicts User Requirements Affect the Levels Created? 
 
-\subsection{Hypothesis}\label{hypothesis}
-When creating a level designer the aim is to always increase the ease at which levels could normally be created. For the scope of this paper, the hypothesises will focus on MI tool within the context of the editor, not the editor itself. Table ~\ref{hyp} shows the hypothesises researched in this paper, it also shows from which source of data each hypothesis depends. Hypothesises 2 and 1 will be addressing  Ling \cite{ling2005length}  and Dunlop \textit{et al}\cite{dunlop2000predictive} predictive texting results and whether they will also prove true in a level editor. Hypothesis 3 will be investigating whether a predictive tool will satisfy the feature proposed by  Alverezs' \textit{et al}\cite{alvarez2018fostering}. Hypothesis 4 will build on the work of  Alvarez' \textit{et al}\cite{alvarez2018fostering} and see if an MI level designer can make designers consider alternative level design approaches. Finally, hypothesis 5 will discover if designers with more experience are more likely to find the MI a negative influence than designers with less experience.
+\subsection{Hypotheses}\label{Hypotheses}
+When creating a level editor the aim is to always increase the ease at which levels could normally be created. For the scope of this paper, the hypotheses will focus on MI component within the context of the editor, not the editor itself. Table ~\ref{hyp} shows the hypotheses researched in this paper, it also shows from which source of data each hypothesis depends. Lings \cite{ling2005length}  and Dunlop \textit{et al}\cite{dunlop2000predictive} found that predictive texting not only increased the speed at which messages are written but also the size of the messages. Hypothesis 2 and 1 will see if these findings are also applicable to level design with an MI component replacing the predictive texting element.  Hypothesis 3 will be investigating whether a predictive component will satisfy the feature proposed by  Alverezs' \textit{et al}\cite{alvarez2018fostering}. Hypothesis 4 will build on the work of  Alvarez' \textit{et al}\cite{alvarez2018fostering} and see if an MI level editor can make designers consider alternative level design approaches. Finally, hypothesis 5 will discover if designers with more experience are more likely to find the MI a negative influence than designers with less experience, the argument being that more experienced designers do not need help to realise their design.
 
 \begin{table*}[h]
 		\centering
-		\caption{Hypothesis Table}
+		\caption{Hypotheses Table}
 		\label{hyp}
 		\def\arraystretch{1.5}
 		\begin{tabular}{|c|p{7cm}|p{7cm}|p{1.75cm}|}
 			\hline
 			& \textbf{Hypothesis}& \textbf{Null Hypothesis} & \textbf{Data Source}\\\hline
-			1 & The MI tool will effect the speed at which the participants create levels.
-			& The MI tool will not effect the speed at which the participants create levels.
+			1 & The MI component will effect the speed at which the participants create levels.
+			& The MI component will not effect the speed at which the participants create levels.
 			& Design Session Statistics\\ \hline
 			
-			2 & The MI tool will effect the size of the levels the participants create.
-			&  The MI tool will not effect the size of the levels the participants create.
+			2 & The MI component will effect the size of the levels the participants create.
+			&  The MI component will not effect the size of the levels the participants create.
 			& Design Session Statistics\\ \hline
 
-			3 & The MI tool will effect the number of the clicks the designer makes.
-			&  The MI tool will not effect the number of the clicks the designer makes.
+			3 & The MI component will effect the number of the clicks the designer makes.
+			&  The MI component will not effect the number of the clicks the designer makes.
 			& Design Session Statistics\\ \hline
 
-			4 & The MI tool will influence participants to explore other level designs.
-			& The MI tool wil not influence participants to explore other level designs.
+			4 & The MI component will influence participants to explore other level designs.
+			& The MI component will not influence participants to explore other level designs.
 			&  Questionnaire\\ \hline
 
-		          5 & The participants with more experience will be Negatively impacted more often by the MI tool.
-			&  There will be no correlation between experience and the negative impact of the MI tool.
+		          5 & The participants with more experience will be Negatively impacted more often by the MI component.
+			&  There will be no correlation between experience and the negative impact of the MI component.
 			& Questionnaire\\ \hline
 			
 		\end{tabular}
 \end{table*}
 
 \subsection{Participants}
-The participants for this experiment will be randomly sampled from Falmouth University Games Academy. As such, most participants will have some game design experience experience. A power analysis for this experiment resulted in a sample sixe of 23.  In this experiment all of the participants will be in one group, they will each be required to design levels using the level editor provided. By the end of the experiment, all of the participants will have designed the same number of levels. Everyone in this study will be given a consent form, an information sheet and the option to quit the experiment at any time. The information sheet will only give the basic information of the project as we do not want to invite acquiescence bias\cite{watson1992correcting}. The data collected in this experiment will not be enough to identify anyone, keeping the participants anonymity safe.
+Once a week, the games Academy host different guild sessions for each game design route (design, art, animation, programming, writing and audio). Approaching the game design guild and another guild will ensure a range of level design ability. All the participants for this experiment will be randomly sampled from these guild sessions through an online name selector. A power analysis for this experiment resulted in a sample size of 23. The power included a two-tailed t-test with an effect size of \textit{0.8}, an alpha error probability of \textit{0.05} and a \textit{power(1- beta error probability)} of \textit{0.95}.  In this experiment all of the participants will be in one group, they will each be required to design levels using the level editor provided. By the end of the experiment, all of the participants will have designed the same number of levels. Everyone in this study will be given a consent form, an information sheet and the option to quit the experiment at any time. The information sheet will only give the basic information of the project as we do not want to invite acquiescence bias\cite{watson1992correcting}. The data collected in this experiment will not be enough to identify anyone, keeping the participants anonymity safe.
+
+
 
 \subsection{Design Session}
-The design session will require the participants to create five different levels each with different editor settings. Before the session starts the users are prompted with a multiple choice question. This question will enquire into the participants' game design experience, measured in years. The user will be presented with the main level designer interface. They will have up to one minute to familiarise themselves with the interface before the experiments start. The different editor settings the participants will be working in can be seen in Table~\ref{settings}. The order in which the different settings will occur will be random, this will reduce the impact of the practice effect on any data gathered. The computer will choose the order in which the editor setting will be applied. This means the observing researcher will not know what current settings are applied.  Making this a double-blind study which will stop investigator/observer bias \cite{phillips1999double}. Before each level starts an on-screen prompt will inform the user of the rules of the current level, for example: "This level has a max size of 24 x 24 tiles.". After completion of each level, the designer will be asked four multiple choice questions.  Each question will have five possible answers, the answers are relative to the questions asked. After the questions have been answered the answers, the map settings, the time is taken and a layout of the map will all be saved.
+The design session will require the participants to create five different levels each with different editor settings. Before the session starts the users are prompted with a multiple choice question. This question will require the participants' to self-assess their own game design experience, from "not a lot" to "a lot" of design experience. After this, the user will be presented with the main level editor interface. They will then be given as much time as they need to familiarize themselves with the interface. The different editor settings the participants will be working in can be seen in Table~\ref{settings}. The order in which the different settings will occur will be random, this will reduce the impact of the practice effect on any data gathered. The computer will choose the order in which the editor setting will be applied. This means the observing researcher will not know what current settings are applied.  Making this a double-blind study which will stop investigator/observer bias \cite{phillips1999double}. Before each level starts an on-screen prompt will inform the user of the rules of the current level, for example: "During this level there will be a component that predicts your requirements.". All of the levels will be silently timed so as not to influence participants to work faster than they would usually. After completion of each level, the designer will be asked a few multiple choice questions.  Each question will have five possible answers, the answers are relative to the questions asked but will follow a similar scale from negative to positive. After the questions have been answered the answers, map settings, time taken and a layout of the map will all be saved to the server.
  The questions are:
 \begin{itemize}
-    \item How frequently did the level designer make you consider an alternative level design?
+    \item How frequently did the level editor make you consider an alternative level design?
     
-    \item How much impact did the level designer have on your work flow?
+    \item How much impact did the level editor have on your work flow?
 
-    \item What kind of impact did the level designer have on your work flow?
+    \item What kind of impact did the level editor have on your work flow?
+
+   \item How difficult did you find it to make the level you wanted?
+
+    \item How please where you of the final level design?
 \end{itemize}
 An alternate method would be to have a questionnaire at the end of the experiment once all levels have been completed. However, as each set of responses correlates to a level for data management having being directly associated with the level is easier. In addition, leaving the questions until the end in one questionnaire may invite levelling and sharpening bias, this is where details are lost and other are heightened over time \cite{koriat2000toward}.
+
+Each level will start with an empty map, with each new map a new prediction model
 
 \begin{table}[h]
 	\centering
@@ -243,14 +253,20 @@ An alternate method would be to have a questionnaire at the end of the experimen
 	\end{tabular}}
 \end{table}
 
+\subsection{The level editor}
+In this experiment there will be two kinds of game objects that can be placed in the level rooms and props. Rooms will occupy tiles on the map, whereas the props can be placed within any rooms. Figure~\ref{myLevelEditor} shows the first prototype design for the level editor. Barnes \textit{et al}\cite{barnes2015designing} suggests that any mixed-initiative component should provide reasoning behind the agents actions, to do this the prototype contains an information log, this information log will be used to tell you why the level editor has made a particular decision. The level view will be a tile based view of the current map, it will allow users to places tile and props according to their respective rules. Figure~\ref{myLevelEditor} also shows the layout of the level editor, on the left is where all the buttons to switch between what prop/room will be placed when the participant clicks. The check button will be used to make sure the game is completable. The checking algorithm will be simple, it will make sure there is a start and an end tile, it will also check these tiles are connected by a valid path. The level complete button will perform a check before finishing to make sure a valid level is being submitted.
+
+\begin{figure}[h]
+	\includegraphics[width=1.0\linewidth]{LevelEditorLayout.PNG}
+	\caption{The first iteration of the proposed level editor}
+	\label{myLevelEditor}
+\end{figure} 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
 % Appendices
 
-\appendices
-\section{First appendix}
-Appendices are optional. Delete or comment out this part if you do not need them.
+
 
 % that's all folks
 \end{document}
