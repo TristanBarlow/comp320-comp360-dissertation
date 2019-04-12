@@ -77,9 +77,9 @@
 
 % The paper headers -- please do not change these, but uncomment one of them as appropriate
 % Uncomment this one for COMP320
-\markboth{COMP320: Research Review and Proposal}{COMP320: Research Review and Proposal}
+%\markboth{COMP360: Research }{COMP320: Research Review and Proposal}
 % Uncomment this one for COMP360
-% \markboth{COMP360: Dissertation}{COMP360: Dissertation}
+\markboth{COMP360: Dissertation}{COMP360: Dissertation}
 
 % make the title area
 \maketitle
@@ -298,7 +298,7 @@ Unit testing was introduced early on in the life cycle of the application. Jest 
 The data from the experiment was processed in Python and was retrieved from the server using a HTTPS Post request. Three Python libraries were used to analyse the data. Scipy was used to provide the statistical functions, Numpy for more statistic functions and data handling and Matplotlib to generate the graphs. Python was used so that the graphs could also be generated when new data comes in. 
 
 \subsection{The MI component will affect the speed at which the participants create levels}
-This hypothesis focused on the time it took to for the participants to finish creating each level. The results showed a large distribution of times when all of the maps were combined into one list.  Figure~\ref{speedDoubleHist} shows the distribution of the maps with and without the MI component. Figure~\ref{speedDoubleHist} shows there is a cluster of times around the 100-300 second mark but both MI and no MI contain some maps that took much longer. The large distribution in time can be attributed to the differing work speeds of the individual participants. To reduce this the times were compared on a per user bases. A ratio of the time it took with the MI tool divided by the time without  the MI was calculated for each user and added to a list. The \textit{P}-Value for the list with ratios was 0.001254 and the \textit{T}-Value was 3.4381. The \textit{P}-Value for this test is very low, which means for this experiment the null hypothesis can be rejected. The mean ratio of time was 1.636 which means that on average it took each user 1.636 times longer to create maps with the MI component. The Cohen's d effect size was 0.9923. A Cohen's d effect size of greater than 0.8 would suggest a large effect size \cite{becker2000effect}. These results indicated that a MI component would affect the speed at which levels are created. The results also indicated that the increase in speed found in predictive texting by Ling \cite{ling2005length}, may not apply to level design.  Fig~\ref{RemovedObjects} shows the percentage of objects that were placed by the MI but then removed by the player. It could be argued that the removal of the unwanted objects shown in Fig~\ref{RemovedObjects} may have been the cause for the increase in time.
+This hypothesis focused on the time it took to for the participants to finish creating each level. The results showed a large distribution of times when all of the maps were combined into one list.  Figure~\ref{speedDoubleHist} shows the distribution of the maps with and without the MI component. Figure~\ref{speedDoubleHist} shows there is a cluster of times around the 100-300 second mark but both MI and no MI contain some maps that took much longer. The large distribution in time can be attributed to the differing work speeds of the individual participants. To reduce this the times were compared on a per user bases. A ratio of the time it took with the MI tool divided by the time without  the MI was calculated for each user and added to a list. The \textit{P}-Value for the list with ratios was 0.001254 and the \textit{T}-Value was 3.4381. The \textit{P}-Value for this test is very low, which means for this experiment the null hypothesis can be rejected. The mean ratio of time was 1.636 which means that on average it took each user 1.636 times longer to create maps with the MI component. The Cohen's d effect size was 0.9923. A Cohen's d effect size of greater than 0.8 would suggest a large effect size \cite{becker2000effect}. These results indicated that a MI component would affect the speed at which levels are created. The results also indicated that the increase in speed found in predictive texting by Dunlop and Crossan\cite{dunlop2000predictive}, may not apply to level design.  Fig~\ref{RemovedObjects} shows the percentage of objects that were placed by the MI but then removed by the player. It could be argued that the removal of the unwanted objects shown in Fig~\ref{RemovedObjects} may have been the cause for the increase in time.
 
 
 \begin{figure}[h]
@@ -313,9 +313,27 @@ This hypothesis focused on the time it took to for the participants to finish cr
 	\label{RemovedObjects}
 \end{figure} 
 
-
 \subsection{The MI component will affect the size of the levels the participants create}
+For this hypothesis the two dependent variables used were the number of props and the number of tiles in the level. There was also a large distribution with the number of props and tiles. Figure~\ref{BoxObj} shows a box plot for the number of objects that were in each level. From Figure~\ref{BoxObj} there can be seen a general skew towards a larger number of objects with MI tool, than without. A ratio of the number of each object with divided by without the MI component was calculated. This removed the uncertainty created by comparing different participants design styles. Table~\ref{size} shows the value calculated from the list of ratios generated from the data. It would appear that the \textit{P}-Value for both ratio of props and tiles are significant as they are less than 0.05. Both the tiles and the props have roughly the same Effect sizes at 0.7, which suggests a large  effect size\cite{becker2000effect}. The mean ratio for both is greater than one, which supports the argument that a MI component does increases the size of the levels created, similar to results found by Ling \cite{ling2005length} with predictive texting. It is interesting to note the large difference in means between the props and tiles. For every prop in a non MI level there were two in a MI level, with tiles there were 1.353 tiles in a MI level to every one in a non MI level. This may suggest that participants did not trust the MI tool to make the bigger decisions such as the layout of the rooms, but they did trust the tool to make smaller decisions like individual prop placement. Supporting this theory is Figure~\ref{RemovedObjects} which shows users removing a higher percentage of tiles than props. 
+\begin{figure}[h]
+	\includegraphics[width=1\linewidth]{NumberofObjectsIntheFinalLevel.png}
+	\caption{Box plot of the number of objects in the final level}
+	\label{BoxObj}
+\end{figure} 
 
+\begin{table}[h]
+	\centering
+	\caption{Number of Objects Values Table}
+	\label{size}
+	\def\arraystretch{2}
+\resizebox{\columnwidth}{!}{\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\textbf{Object Type} & \textbf{\textit{P}-Value}& \textbf{\textit{T}-Value} & \textbf{Effect Size}& \textbf{Mean Ratio MI/No MI}\\\hline
+		Tiles &0.01457&2.539&0.7329&1.353\\ \hline
+		Props &0.01570&2.509&0.7242&2.002\\ \hline
+
+	\end{tabular}}
+\end{table}
 
 \subsection{The MI component will affect the number of the clicks the designer makes}
 
