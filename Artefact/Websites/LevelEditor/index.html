@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Level Editor</title>
+    <meta name="description" content=" " />
+    <meta name="author" content=" " />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="320" />
+    <!-- Use maximum-scale and user-scalable at your own risk. It disables pinch/zoom. Think about usability/accessibility before including.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+
+    <script src="../lib/vector2.js"></script>
+    <script src="../lib/Utility.js"></script>
+    <script src="../lib/rect.js"></script>
+    <script src="../lib/size.js"></script>
+    <script src="../lib/input_keycodes.js"></script>
+    <script src="../lib/NewKeyCodes.js"></script>
+    <script src="../lib/input.js"></script>
+    <script src="../lib/canvas.js"></script>
+    <script src="../lib/gazcanvas.js"></script>
+    <script src="../lib/Functions.js"></script>
+    <script src="../lib/RNG.js"></script>
+
+    <script src="js/Constants/RoomConstants.js"></script>
+
+    <script src="js/Constants/StatisticConstants.js"></script>
+    <script src="js/Constants/TutorialConstants.js"></script>
+    <script src="js/Constants/QuestionConstants.js"></script>
+    <script src="js/Constants/SettingsConstants.js"></script>
+
+    <script src="js/Requests/PostHandler.js"></script>
+
+    <script src="js/Managers/LevelObjectManager.js"></script>
+    <script src="js/Managers/OverlayManager.js"></script>
+    <script src="js/Managers/StatManager.js"></script>
+    <script src="js/Managers/ToolbarManager.js"></script>
+
+
+    <script src= "StatisticStructs.js"></script>
+
+    <script src="js/DrawObjects/SpriteDrawObject.js"></script>
+
+    <script src="js/LevelData/Prop.js"></script>
+    <script src="js/LevelData/Tile.js"></script>
+    <script src="js/LevelData/GhostTile.js"></script>
+    <script src="js/LevelData/Room.js"></script>
+    <script src="js/Managers/Memento.js"></script>
+    <script src="js/LevelData/GridData.js"></script>
+    <script src="js/LevelData/LevelViewer.js"></script>
+
+    <script src="js/Game/GameEntity.js"></script>
+    <script src="js/Game/GamePlayer.js"></script>
+    <script src="js/Game/GameTile.js"></script>
+    <script src="js/Game/GameLevel.js"></script>
+
+    <script src="js/Constants/PropConstants.js"></script>
+
+    <script src="js/States/StateMachine.js"></script>
+    <script src="js/States/AbstractState.js"></script>
+    <script src="js/States/LevelCreationState.js"></script>
+    <script src="js/States/OverlayState.js"></script>
+    <script src="js/States/PlayLevelState.js"></script>
+    <script src="js/HtmlBridge.js"></script>
+    <script src="js/Constants/OverlayConstants.js"></script>
+    <script src="js/Constants/ToolbarConstants.js"></script>
+
+    <script src="js/AI/Components/Prediction/RoomEntry.js"></script>
+    <script src="js/AI/Components/Pathfinding/PathNode.js"></script>
+    <script src="js/AI/Components/Pathfinding/PathFinder.js"></script>
+    <script src="js/AI/Components/Prediction/RoomModel.js"></script>
+    <script src="js/AI/Components/Prediction/Predictor.js"></script>
+
+    <script src="js/AI/AIAgent.js"></script>
+    <script src="js/AI/AIBridge.js"></script>
+
+
+    <script src="js/Managers/Globals.js"></script>
+
+
+</head>
+<body >
+<div class="site-container noselect">
+
+    <div class="sidebar">
+
+        <div class="panel" style = "height: 33%">
+            <h2> Information Log </h2>
+            <textarea id = "informationLog" class = "infoLog"  readonly ></textarea>
+        </div>
+
+        <div  class="panel">
+            <h2> Room Controls </h2>
+            <div id = "roomControls">
+            </div>
+        </div>
+
+        <div  class="panel">
+            <h2> Prop Controls </h2>
+            <div id = "propControls">
+            </div>
+        </div>
+
+    </div>
+    <div class="header">
+        <nav>
+            <ul id="toolbar">
+                <li id = "complete" class = "levelComplete disable"> <a href="#" onclick= "HtmlBridge.TryLevelComplete(); return false;"> Level Complete </a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <div id = "levelViewerContainer" class="levelViewerCreate"> <canvas id="canvas" onmousedown="return false;"></canvas> </div>
+
+</div>
+
+<div id="overlay" class = "noselect">
+    <div id = "OverlayInner">
+        <img id = "overlayImage">
+        <div id = "OverlayMessage"> This is a very long message about stuff and thinga</div>
+        <div id = "overlay_input"></div>
+        <div id = "OverlayResponses">
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+<script>
+    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+    document.body.scroll = "no"; // ie only
+    document.body.style.padding = 0;
+    document.body.style.margin = 0;
+
+    Canvas.opengl = false;
+
+    let GVars = new Globals();
+    GVars.Init();
+
+    GVars.StateMachine().ChangeState(new LevelCreationState("create", 1), false);
+
+    HtmlBridge.ToggleEditorPlayState(false);
+
+    PostHandler.SendGet("hi");
+
+    setInterval(function ()
+    {
+        GVars.StateMachine().Run();
+    }, 17);
+
+
+/*
+    let num_elements = 100000;
+    let dict = {};
+    for(let i = 0; i< num_elements; i++)
+    {
+        dict[StatisticStructs.NewUUID()] = Utility.GenerateRandomNumber(0.1, 100);
+    }
+
+    let t = StatManager.GetTime();
+*/
+
+</script>

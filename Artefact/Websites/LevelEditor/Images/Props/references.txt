@@ -1,0 +1,6 @@
+stamina = https://icons8.com/icon/959/pill
+warhammer = https://thenounproject.com/term/warhammer/440124/
+dagger = https://icons8.com/icon/1166/weapon
+heart = https://icons8.com/icon/580/heart-outline
+coins = http://freeiconshop.com/icon/coins-icon-outline/
+chest - https://pngimage.net/chest-icon-png-1/

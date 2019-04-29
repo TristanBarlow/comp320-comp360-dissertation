@@ -1,0 +1,327 @@
+*{
+  box-sizing:border-box;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+body, html {
+  background: #bbbcbf;
+  padding:0px;
+  margin:0px;
+  width:100%;
+  height:100%;
+
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.infoLog
+{
+    width:100%;
+    height:80%;
+    resize: none;
+    overflow: hidden;
+    border:1px solid #000000;
+    font-size:20px;
+    background: #bbbcbe;
+}
+
+.RoomButton
+{
+    background-color:#e4685d;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border:1px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color: #000000;
+    overflow: hidden;
+    font-family: Arial;
+    font-size: 25px;
+    padding:6px 15px;
+    text-decoration:none;
+    text-align: center;
+    text-shadow:0px 1px 0px #b23e35;
+    width:48%;
+    margin: 6px 2px;
+    transition-duration: 0.2s;
+}
+
+#canvas{
+    padding:2px;
+    background: black;
+    width:100%;
+    height:100%;
+}
+.default-button {
+
+}
+.prop{
+  -moz-box-shadow:inset 0px 39px 0px -24px #6699ff;
+  -webkit-box-shadow:inset 0px 39px 0px -24px #6699ff;
+  box-shadow:inset 0px 39px 0px -24px #6699ff;
+  background-color:#6600ff;
+}
+.RoomButton:hover {
+	background: #8d8d8e;
+    padding: 10px 16px;
+    margin: 2px 1px;
+}
+.RoomButton:active
+{
+	position:relative;
+	top:1px;
+}
+.site-container
+{
+  width:100%;
+  height:100%;
+    min-width: 1700px;
+    min-height: 800px;
+}
+.sidebar
+{
+  width:28%;
+  height:100%;
+  float: left;
+  padding:10px;
+    overflow: hidden;
+}
+.panel {
+  width:100%;
+  padding:2px;
+    margin-top: 2px;
+  margin-bottom: 2px;
+  height: auto;
+    overflow: hidden;
+}
+
+.panel h2{
+    height: auto;
+  display:block;
+  text-align: center;
+  padding: 1px 0 1px 0;
+  margin: 0;
+    font-size: 35px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  clear:both;
+}
+
+.header{
+    width:72%;
+    height: 10%;
+    float:right;
+    padding: 2px 2px 2px 2px;
+}
+
+.levelViewerCreate
+{
+    width:72%;
+    height:90%;
+    border: 5px solid #000000;
+}
+.levelViewerPlay
+{
+    width:100%;
+    height:100%;
+    position:absolute;
+    border: 5px solid #000000;
+}
+nav{
+  height:100%;
+    padding:0;
+    margin:0;
+}
+ul
+{
+    padding-inline-start: 0;
+}
+nav ul
+{
+    overflow: hidden;
+  height:100%;
+    margin: 0 auto;
+}
+nav ul li{
+  float:left;
+
+  height: 100%;
+  margin-right: 2px;
+  border: 1px solid #000000;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+nav ul li a{
+  width:100%;
+
+  color: #000000;
+  display: inline-block;
+  height:100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  text-decoration: none;
+    font-size:30px;
+  text-align: center;
+
+}
+nav ul li a:active {
+    position:relative;
+    top:1px;
+}
+nav ul li a:hover {
+   opacity: 0.5;
+}
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* newer browsers */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    overflow: hidden;
+    min-width: 1700px;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.middle
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#OverlayInner
+{
+    vertical-align: middle;
+    text-align: center;
+    display: block;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    font-size: 20px;
+    background-color: rgba(82, 93, 111, 0.98);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+}
+input
+{
+    font-size: 40px;
+    text-align: center;
+    margin: 1%;
+}
+
+#OverlayResponses
+{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+#OverlayMessage
+{
+    font-size: 40px;
+    padding: 5px;
+}
+.overlayButton
+{
+    width: auto;
+    height: auto;
+    font-size: 30px;
+    box-sizing: border-box;
+    margin: 10px;
+    overflow: visible;
+    padding: 10px;
+    transition-duration: 0.2s;
+}
+.overlayButton:hover
+{
+    padding: 15px;
+    margin: 5px;
+}
+
+.questionButton
+{
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    transition-duration: 0.2s;
+}
+.questionButton:hover
+{
+    padding: 15px;
+    margin: 5px;
+}
+
+.levelComplete
+{
+    width: 30%;
+    padding: 0;
+}
+ .enable
+ {
+     background:  #20af00;
+ }
+.disable
+{
+    background: rgba(72, 68, 67, 0.87);
+}
+
+.tooltiptext {
+    overflow: visible;
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    pointer-events: none;
+    opacity: 100%;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.questionButton:hover .tooltiptext
+{
+    visibility: visible;
+}
+#overlayImage
+{
+    width: 400px;
+    height: 350px;
+    visibility: visible;
+    position: relative;
+    float: right;
+}
