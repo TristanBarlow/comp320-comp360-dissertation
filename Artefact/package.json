@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "coverage": "istanbul cover Websites/LevelEditor/js/HtmlBridge.js",
+    "test": "jest",
+    "lint": " jshint Websites/",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "test",
+    "lint"
+  ],
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "jest": "^24.1.0",
+    "jshint": "^2.10.1",
+    "pre-commit": "^1.2.2"
+  }
+}
